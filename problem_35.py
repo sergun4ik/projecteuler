@@ -39,3 +39,6 @@ for x in primes:
         circulars.append(x)
 
 len(circulars)
+print(circulars)
+
+
