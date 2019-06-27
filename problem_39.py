@@ -1,33 +1,26 @@
 ''' Solves problem #39 on https://projecteuler.net
 Sergey Lisitsin. May 2019'''
 
+from math import pow
 
-def isright(a,b,c):
-    sides = [a,b,c]
-    sides.sort()
-    if sides[-1]**2 == (sides[0]**2+sides[1]**2):
-        return True
-    return False
+squares = [x**2 for x in range(1,1000)]
 
-def champ(list):
-    champion = 0
-    for x in list:
-        if list.count(x) > champion:
-            champion = x
-    return champion
+results = {}
+for x in range(1,1001):
+    results[x]=0
+for x in squares:
+    for y in squares:
+        if x+y in squares and (pow(x,1/2) + pow(y,1/2) + pow(x+y,1/2) < 1000):
+            name = (pow(x,1/2) + pow(y,1/2) + pow(x+y,1/2))
+            results[name] += 1
 
-sides1 = sides2 = sides3 = list(range(1,998))
+champ = 0
 
-results = []
-for x in sides1:
-    for y in sides2:
-        for z in sides3:
-            if x+y+z>1000:
-                continue
-            if x == y and x ==z:
-                continue
-            if isright(x,y,z):
-                results.append(x+y+z)
+for x in results:
+    if results[x] > champ:
+        champ = x
+        print("{} {}".format(x,results[x]))
+
+print (champ)
 
 
-print(champ(results))

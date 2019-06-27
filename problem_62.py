@@ -23,5 +23,5 @@ for x in cubes:
     if sibcount(x)==5:
         print(x)
         break
-        
+
 
