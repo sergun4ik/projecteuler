@@ -30,9 +30,9 @@ eighty = len(list('eighty'))
 ninety = len(list('ninety'))
 
 hundredcount = 999 - 99
-andcount = 999 - 99 - 9
+andcount = 999 - 100
 onecount = 100 + 99*9
-twocount = 100 + 99*10
+twocount = 100 + 99*9
 threecount = 100 + 99*10
 fourcount = 100 + 99*10
 fivecount = 100 + 99*10
@@ -58,12 +58,12 @@ sixtycount = 10*10
 seventycount = 10*10
 eightycount = 10*10
 ninetycount = 10*10
-
+thousandcount = 8+3
 
 result = onecount*one+twocount*two+threecount*three+fourcount*four+fivecount*five+sixcount*six+sevencount\
     +sevencount*seven+eightcount*eight+ninecount*nine+tencount*ten+elevencount*eleven+twelvecount*twelve\
     +thirteencount*thirteen+fourteencount*fourteen+fifteencount*fifteen+sixteencount*sixteen+seventeencount*seventeen\
     +eighteencount*eighteen+nineteencount*nineteen+twentycount*twenty+thirtycount*thirty+fourtycount*fourty\
-    +fiftycount*fifty+sixtycount*sixty+seventycount*seventy+eightycount*eighty+ninetycount*ninety
+    +fiftycount*fifty+sixtycount*sixty+seventycount*seventy+eightycount*eighty+ninetycount*ninety+thousandcount
 andcount = 999-99-9
 print(result+andcount+11)
