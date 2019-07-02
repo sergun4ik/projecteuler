@@ -20,7 +20,7 @@ def findprimes(num):
 def rotation(n):
     rotations = set()
     for i in range(len(str(n))):
-        n = int(str(n)[1:] + str(n)[:1])
+        n = (str(n)[1:] + str(n)[:1])
         rotations.add(n)
     return rotations
 
@@ -32,13 +32,13 @@ for x in primes:
     circular = True
     # print(str(x))
     for p in (rotation(x)):
-        if p not in primes:
+        if int(p) not in primes:
             circular = False
             break
     if circular:
         circulars.append(x)
 
-len(circulars)
+print(len(circulars))
 print(circulars)
 
 
