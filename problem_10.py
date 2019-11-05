@@ -3,7 +3,7 @@ def findprimes(count):
     number of primes'''
     primes = [2,3,5,7]
     start = 9
-    for x in range(start, count):
+    for x in range(start, count, 2):
         isprime = True
         for p in primes:
             if x % p == 0:
