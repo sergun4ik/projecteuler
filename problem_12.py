@@ -38,7 +38,7 @@ def jointfactors(num1, num2):
 
 winner = 0
 counter = 1
-while winner < 501:
+while winner < 201:
     number = counter
     next = counter + 1
     if len(jointfactors(number, next)) < 501:

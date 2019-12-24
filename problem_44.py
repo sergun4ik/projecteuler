@@ -20,4 +20,3 @@ for x in pens:
         if x+y in pens and abs(x - y) in pens:
             print(abs(x-y))
             break
-            
