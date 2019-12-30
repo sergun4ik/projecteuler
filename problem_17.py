@@ -1,5 +1,5 @@
 ''' Solves problem #17 on https://projecteuler.net
-Sergey Lisitsin. June 2019'''
+Sergey Lisitsin. December 2019'''
 
 def get_tail(num):
     output = 'and'
