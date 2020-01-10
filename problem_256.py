@@ -72,22 +72,6 @@ def returnmask(num):
 
 
 
-room = 4
-tatfree = 0
-while tatfree < 1:
-  tats = int(room/2)
-  configs = factors(room)
-  for x in configs:
-    print ("checking room size {} sides {} by {}".format(room,x[0],x[1]))
-    tree = compiletree(tats)
-    tree = deletes(tree)
-    #print(tree)
-    for p in tree:
-      tape = buildtape(p,*x)
-      if verifytape(tape,*x) == 'invalid room':
-        tatfree = tatfree +1
-        print ('tatfree count is {}'.format(tatfree))
-  room = room + 2
           
 
 def clearcases(length):
@@ -337,3 +321,21 @@ def slicey(x1, x2):
   return slicerooms
 
   
+
+room = 4
+tatfree = 0
+while tatfree < 1:
+  tats = int(room/2)
+  configs = factors(room)
+  for x in configs:
+    print ("checking room size {} sides {} by {}".format(room,x[0],x[1]))
+    tree = compiletree(tats)
+    tree = deletes(tree)
+    #print(tree)
+    for p in tree:
+      tape = buildtape(p,*x)
+      if verifytape(tape,*x) == 'invalid room':
+        tatfree = tatfree +1
+        print ('tatfree count is {}'.format(tatfree))
+  room = room + 2
+

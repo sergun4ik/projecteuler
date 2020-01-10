@@ -1,6 +1,11 @@
 ''' Solves problem #50 on https://projecteuler.net
 Sergey Lisitsin. December 2019'''
 
+def isprime(num):
+    for x in range(2,(num//2)+1):
+        if num%x == 0:
+            return False
+    return True
 
 def findprimes(count):
     ''' This function returns first count
@@ -17,5 +22,9 @@ def findprimes(count):
             primes.append(x)
     return primes
 
-primes = findprimes(10000)
+primes = findprimes(100000)
+
+champ = 0
+slice = 5
+
 
