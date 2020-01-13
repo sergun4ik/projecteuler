@@ -12,7 +12,7 @@ def findprimes(count):
     number of primes'''
     primes = [2,3,5,7]
     start = 9
-    for x in range(start, count):
+    for x in range(start, count,2):
         isprime = True
         for p in primes:
             if x % p == 0:
@@ -22,9 +22,28 @@ def findprimes(count):
             primes.append(x)
     return primes
 
-primes = findprimes(100000)
-
+p = findprimes(5000)
 champ = 0
-slice = 5
+champlist = []
 
 
+while len(p)>3:
+    summ = 0
+    for x in range(len(p)):
+        #if x < len(champlist):
+        #    continue
+        if x%2==0:
+            continue
+        sublist = p[x::]
+        if len(sublist) < len(champlist):
+            continue
+        summ = sum(sublist)
+        if summ > 1000000:
+            continue
+        if isprime(summ) and len(sublist)>len(champlist):
+            champ = summ
+            champlist = sublist
+    p.pop(-1)
+
+
+print("The winner is {} standing at {} primes long!".format(champ,len(champlist)))
