@@ -1,18 +1,25 @@
 ''' Solves problem #31 on https://projecteuler.net
-Sergey Lisitsin. May 2019'''
+Sergey Lisitsin. Jan 2020'''
 
-p = 1
-p2 = 2
-p5 = 5
-p10 = 10
-p20 = 20
-p50 = 50
-pound = 100
-pound2 = 200
 
-coins = [p, p2, p5, p10, p20, p50, pound, pound2]
 
-ways = 0
+combs = []
+for pence in range(201):
+    for twopence in range(101):
+        for fivepence in range(41):
+            for tenpence in range(21):
+                for twentypence in range(11):
+                    for fiftypence in range(5):
+                        for pound in range(3):
+                            #print(pence)
+                            if pence + (twopence*2) \
+                                + (fivepence * 5) \
+                                + (tenpence * 10) \
+                                + (twentypence * 20) \
+                                + (fiftypence * 50) \
+                                + (pound * 100) == 200:
+                                  combs.append((pence,twopence,fivepence,tenpence, \
+                                                twentypence, fiftypence, pound))
+                                  print(len(combs))
 
-for coin in coins:
-    for subcoin in coins.remove(coin):
+print(len(combs)+1)
