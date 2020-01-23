@@ -13,5 +13,7 @@ def findprimes(count):
             primes.append(x)
     return primes
 
+
+
 list = findprimes(2000000)
 sum(list)
