@@ -40,3 +40,7 @@ for x in range(7,2000,2):
         break
 
 
+side = x*x
+step = 1
+
+while side > 0:
