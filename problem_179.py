@@ -2,6 +2,8 @@
 Sergey Lisitsin. Feb 2020
 '''
 
+from datetime import datetime
+start = datetime.now()
 def bump(l,step):
     sub = [x+1 for x in l[::step]]
     l[::step] = sub
@@ -15,3 +17,4 @@ for x in range(len(a)-1):
         counter+=1
 
 print(counter)
+print(datetime.now()-start)
