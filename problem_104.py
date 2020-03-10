@@ -2,8 +2,6 @@
 Sergey Lisitsin. Mar 2020
 '''
 
-
-
 def generate_fibonacci(*pair):
     return (pair[1], pair[1]+pair[0])
 
@@ -12,7 +10,6 @@ counter = 3
 while len(str(a[1])) < 18:
     a = generate_fibonacci(*a)
     counter += 1
-
 
 testset = {'1','2','3','4','5','6','7','8','9'}
 

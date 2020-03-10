@@ -18,3 +18,6 @@ for x in range(1,lim+1):
     counter.add(a)
 
 print(sum(list((counter))))
+
+
+
