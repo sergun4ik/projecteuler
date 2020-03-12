@@ -14,4 +14,4 @@ def matrix(side):
 	candidates.append(1)
 	return sum(candidates)
 
-matrix(1001)
+print(matrix(1001))

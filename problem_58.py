@@ -40,7 +40,29 @@ for x in range(7,2000,2):
         break
 
 
+def rotate(matrix):
+  result = []
+  for x in range((len(matrix[0]))-1,-1,-1):
+    subresult = []
+    for y in matrix:
+      subresult.append(y[x])
+    result.append(subresult)
+  return result
+
+def expand_matrix(matrix):
+    width = len(matrix)
+    height = len(matrix[0])
+
+
+diagonals = []
+step = 2
+allnumbers = 2
+while len(diagonals) / allnumbers > 0.1:
+
+
+
 side = x*x
 step = 1
+
 
 
