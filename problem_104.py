@@ -5,15 +5,19 @@ Sergey Lisitsin. Mar 2020
 def generate_fibonacci(*pair):
     return (pair[1], pair[1]+pair[0])
 
-a = generate_fibonacci(1,1)
+
+a = generate_fibonacci(1, 1)
 counter = 3
 while len(str(a[1])) < 18:
     a = generate_fibonacci(*a)
     counter += 1
 
-testset = {'1','2','3','4','5','6','7','8','9'}
+testset = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
 
-while True:
+beg = set(str(a[1])[:9:])
+end = set((str(a[1])[::-1][:9:]))
+
+while beg != testset or end != testset:
     beg = set((str(a[1])[:9:]))
     end = set((str(a[1])[::-1][:9:]))
     if beg == testset:
@@ -28,7 +32,7 @@ while True:
     #         print(str(a[1])[::-1][:9:], str(a[1])[:9:])
     #         break
     a = generate_fibonacci(*a)
-    counter+=1
+    counter += 1
 
 print(str(a[1])[::-1][:9:], str(a[1])[:9:])
 print(a[1])
