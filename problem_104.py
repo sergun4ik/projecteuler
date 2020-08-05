@@ -12,19 +12,23 @@ while len(str(a[1])) < 18:
     a = generate_fibonacci(*a)
     counter += 1
 
-testset = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+testset = ['1','2','3','4','5','6','7','8','9']
 
-beg = set(str(a[1])[:9:])
-end = set((str(a[1])[::-1][:9:]))
+#beg = sorted(str(a[1])[:9:])
+#end = sorted(str(a[1])[::-1][:9:])
 
-while beg != testset or end != testset:
-    beg = set((str(a[1])[:9:]))
-    end = set((str(a[1])[::-1][:9:]))
-    if beg == testset:
+#print(beg,end)
+
+while True:
+    #beg = sorted(str(a[1])[:9:])
+    #end = sorted(str(a[1])[-1:-10:-1])
+    #print(counter)
+    #print(beg,end)
+    if sorted(str(a[1])[:9:]) == testset:
         print('Fibonacci {} front is pandigital'.format(counter))
-    if end == testset:
+    if sorted(str(a[1])[-1:-10:-1]) == testset:
         print('Fibonacci {} end is pandigital'.format(counter))
-    if beg == end == testset:
+    if sorted(str(a[1])[:9:]) == sorted(str(a[1])[-1:-10:-1]) == testset:
         break
     # print(counter)
     # if set(str(a[1])[:9:]) == testset:

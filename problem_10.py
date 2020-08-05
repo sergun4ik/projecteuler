@@ -16,4 +16,4 @@ def findprimes(count):
 
 
 list = findprimes(2000000)
-sum(list)
+print(sum(list))
