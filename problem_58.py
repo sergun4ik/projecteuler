@@ -1,68 +1,29 @@
 ''' Solves problem # 58 on https://projecteuler.net
-Sergey Lisitsin. Jan 2020
+Sergey Lisitsin. Nov 2020
 '''
 
-def matrix(side):
-	list = side*side
-	decrement = side-1
-	candidates = []
-	while list > 1:
-		for x in range(4):
-			candidates.append(list)
-			list = list - decrement
-		decrement = decrement - 2
-	candidates.append(1)
-	return candidates
 
-
-def isprime(num):
-    if num == 1:
+def is_prime(num):
+    ''' finds if a number is prime '''
+    if num==1:
         return False
-    for x in range(2,(num//2),2):
-        if num%x == 0:
+    for x in range(2,int(num**0.5)+1):
+        if num%x==0:
             return False
     return True
 
+diagonals = [1]
+primes = set([3])
 
-def countprimes(list):
-    counter = 0
-    for x in list:
-        if isprime(x):
-            counter +=1
-    return counter
+counter = 3
+while len(primes)/len(diagonals) > 0.1:
+    current = counter**2
+    step = counter - 1
+    for x in range(3,-1,-1):
+        diagonals.append(current - x*step)
+        if is_prime(diagonals[-1]):
+            primes.add(diagonals[-1])
+    #print(len(diagonals), len(primes), len(primes)/len(diagonals))
+    counter += 2
 
-
-for x in range(7,2000,2):
-    m = matrix(x)
-    print (len(m))
-    if countprimes(m)/len(m) < 0.1:
-        print(x)
-        break
-
-
-def rotate(matrix):
-  result = []
-  for x in range((len(matrix[0]))-1,-1,-1):
-    subresult = []
-    for y in matrix:
-      subresult.append(y[x])
-    result.append(subresult)
-  return result
-
-def expand_matrix(matrix):
-    width = len(matrix)
-    height = len(matrix[0])
-
-
-diagonals = []
-step = 2
-allnumbers = 2
-while len(diagonals) / allnumbers > 0.1:
-
-
-
-side = x*x
-step = 1
-
-
-
+print(diagonals[-1]**0.5)

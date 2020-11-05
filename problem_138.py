@@ -30,7 +30,7 @@ while counter < 12:
     if abs(diff) == 1:
         counter += 1
         sums += undone[0][0][2]
-        print(counter, sums)
+        print(counter, undone[0][0][2], sums)
     hatch(undone[0][0])
     undone.pop(0)
 
